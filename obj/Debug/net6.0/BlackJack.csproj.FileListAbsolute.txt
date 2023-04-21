@@ -1,0 +1,5 @@
+C:\Users\thijs\OneDrive\Documenten\Roc\C#\BlackJack2.0\BlackJack\obj\Debug\net6.0\BlackJack.csproj.AssemblyReference.cache
+C:\Users\thijs\OneDrive\Documenten\Roc\C#\BlackJack2.0\BlackJack\obj\Debug\net6.0\BlackJack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thijs\OneDrive\Documenten\Roc\C#\BlackJack2.0\BlackJack\obj\Debug\net6.0\BlackJack.AssemblyInfoInputs.cache
+C:\Users\thijs\OneDrive\Documenten\Roc\C#\BlackJack2.0\BlackJack\obj\Debug\net6.0\BlackJack.AssemblyInfo.cs
+C:\Users\thijs\OneDrive\Documenten\Roc\C#\BlackJack2.0\BlackJack\obj\Debug\net6.0\BlackJack.csproj.CoreCompileInputs.cache
