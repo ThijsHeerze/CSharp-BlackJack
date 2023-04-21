@@ -4,9 +4,10 @@ public class Hand
 {
 	public Hand()
 	{
-		public function cardsInHand()
-		{
+		
+	}
+	public void InHand()
+	{
 
-		}
 	}
 }

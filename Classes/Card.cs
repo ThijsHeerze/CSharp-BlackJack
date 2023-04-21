@@ -16,11 +16,3 @@ public class Card
 
 	}
 }
-}
-
-/*string[] cards = {
-    schoppen{2, 3, 4, 5, 6, 7, 8, 9, 10, 'boer', 'vrouw', 'heer', 'aas' },
-    klaver{2, 3, 4, 5, 6, 7, 8, 9, 10, 'boer', 'vrouw', 'heer', 'aas'},
-    harten{2, 3, 4, 5, 6, 7, 8, 9, 10, 'boer', 'vrouw', 'heer', 'aas'},
-    ruiten{2, 3, 4, 5, 6, 7, 8, 9, 10, 'boer', 'vrouw', 'heer', 'aas'};
-}

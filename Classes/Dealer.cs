@@ -6,24 +6,15 @@ public class Dealer
 	{
 		
     }
+	public void NewGame()
+	{
+			
+	}
 }
 
-/*public startNewGame()
-		{
-			if (startNewGame = true)
-		{
-			newGame = new Game;
-			newCards = new newCards;
-		}
-			
-		}
+	
 
-		public shuffleCards()
-		{
-
-		}
-
-		public newCards()
+		/*public newCards()
 		{
 
 		}*/
