@@ -15,4 +15,16 @@ public class Card
 		this.value = value;
 
 	}
+	public void getCardName(string name)
+	{
+
+	}
+	public void getPoints(string name, int value)
+	{
+
+	}
+	public void toString(string color, string name, int value)
+	{
+
+	}
 }
