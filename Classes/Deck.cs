@@ -83,3 +83,15 @@ public class Deck
         return card;
     }
 }
+
+    /*public Card Deal()
+    {
+        if (nextToDeal >= cardArr.Length)
+        {
+            return null; // out of cards
+        }
+
+        Card card = cardArr[nextToDeal];
+        nextToDeal++;
+        return card;
+    }*/

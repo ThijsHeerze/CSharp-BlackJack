@@ -1,16 +1,103 @@
-﻿using System;
+﻿using BlackJack;
+using System;
 
 public class Player
 {
 	string name { get; set; }
-	int hitPoints { get; set; }
+    string Rank { get; set; }
+    int hitPoints { get; set; }
+    private readonly List<Card> hand;
 
-	public Player()
+    public Player()
 	{
-		
-	}
+        
+    }
 
-	public void getPlayer()
+    //Adds a Card object to the player's hand.
+    public void AddCardToHand(Card card)
+    {
+        hand.Add(card);
+    }
+    
+    //Calculates the total value of the player's hand, taking into account the value of aces.
+    public int GetHandValue(Rank rank)
+    {
+        this.Rank = rank;
+        var value = 0;
+        var numAces = 0;
+
+        foreach (var card in hand)
+        {
+            if (card.Rank == Rank.Ace)
+            {
+                numAces++;
+            }
+            // || = OR
+            else if (card.Rank == Rank.Jack || card.Rank == Rank.Queen || card.Rank == Rank.King)
+            {
+                value += 10;
+            }
+            else
+            {
+                value += (int)card.Rank;
+            }
+        }
+
+        // Handle aces
+        for (var i = 0; i < numAces; i++)
+        {
+            if (value + 11 > 21)
+            {
+                value += 1;
+            }
+            else
+            {
+                value += 11;
+            }
+        }
+
+        return value;
+    }
+    
+    //Returns true if the player's hand value exceeds 21.
+    public bool IsBroken()
+    {
+        return GetHandValue() > 21;
+    }
+
+    //Returns true if the player has a blackjack (an ace and a face card or a 10).
+    public bool HasBlackjack()
+    {
+        string Rank;
+        if (hand.Count == 2)
+        {
+            var firstCard = hand[0];
+            var secondCard = hand[1];
+
+            // && = AND
+            if ((firstCard.Rank == Rank.Ace && (secondCard.Rank == Rank.Jack || secondCard.Rank == Rank.Queen || secondCard.Rank == Rank.King))
+                || (secondCard.Rank == Rank.Ace && (firstCard.Rank == Rank.Jack || firstCard.Rank == Rank.Queen || firstCard.Rank == Rank.King)))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Returns a string representation of the player's hand.
+    public string HandToString()
+    {
+        var handString = "";
+
+        foreach (var card in hand)
+        {
+            handString += card + " ";
+        }
+
+        return handString.Trim();
+    }
+
+    public void getPlayer()
 	{
 
 	}
@@ -18,5 +105,5 @@ public class Player
 	public void setPlayer()
 	{
 
-	}
+	}    
 }
