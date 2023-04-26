@@ -1,9 +1,8 @@
-﻿using BlackJack;
-using System;
+﻿namespace BlackJack;
 
 public class Deck
 {
-    private List<Card> cards;
+    public List<Card> cards;
 
     public Deck()
     {
@@ -22,7 +21,7 @@ public class Deck
         cards.Add(new Card("harten", "vrouw", 10));
         cards.Add(new Card("harten", "heer", 10));
         cards.Add(new Card("harten", "aas", 11));
-            
+
         cards.Add(new Card("ruiten", "2", 2));
         cards.Add(new Card("ruiten", "3", 3));
         cards.Add(new Card("ruiten", "4", 4));
@@ -84,14 +83,14 @@ public class Deck
     }
 }
 
-    /*public Card Deal()
+/*public Card Deal()
+{
+    if (nextToDeal >= cardArr.Length)
     {
-        if (nextToDeal >= cardArr.Length)
-        {
-            return null; // out of cards
-        }
+        return null; // out of cards
+    }
 
-        Card card = cardArr[nextToDeal];
-        nextToDeal++;
-        return card;
-    }*/
+    Card card = cardArr[nextToDeal];
+    nextToDeal++;
+    return card;
+}*/

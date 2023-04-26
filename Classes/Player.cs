@@ -1,11 +1,11 @@
-﻿using BlackJack;
-using System;
+﻿namespace BlackJack;
 
+/*
 public class Player
 {
-	string name { get; set; }
-    string Rank { get; set; }
-    int hitPoints { get; set; }
+	//string name { get; set; }
+    //string Rank { get; set; }
+    //int hitPoints { get; set; }
     private readonly List<Card> hand;
 
     public Player()
@@ -20,9 +20,9 @@ public class Player
     }
     
     //Calculates the total value of the player's hand, taking into account the value of aces.
-    public int GetHandValue(Rank rank)
+    /*public int GetHandValue()
     {
-        this.Rank = rank;
+        this.Deck = deck;
         var value = 0;
         var numAces = 0;
 
@@ -63,47 +63,47 @@ public class Player
     public bool IsBroken()
     {
         return GetHandValue() > 21;
-    }
+    }*/
 
-    //Returns true if the player has a blackjack (an ace and a face card or a 10).
-    public bool HasBlackjack()
+//Returns true if the player has a blackjack (an ace and a face card or a 10).
+/*public bool HasBlackjack()
+{
+    string Deck;
+    if (hand.Count == 2)
     {
-        string Rank;
-        if (hand.Count == 2)
+        var firstCard = hand[0];
+        var secondCard = hand[1];
+
+        // && = AND
+        if ((firstCard.Deck == Deck.Ace && (secondCard.Deck == Deck.boer || secondCard.Deck == Deck.Queen || secondCard.Deck == Deck.King))
+            || (secondCard.Deck == Deck.Ace && (firstCard.Deck == Deck.Jack || firstCard.Rank == Deck.Queen || firstCard.Rank == Deck.King)))
         {
-            var firstCard = hand[0];
-            var secondCard = hand[1];
-
-            // && = AND
-            if ((firstCard.Rank == Rank.Ace && (secondCard.Rank == Rank.Jack || secondCard.Rank == Rank.Queen || secondCard.Rank == Rank.King))
-                || (secondCard.Rank == Rank.Ace && (firstCard.Rank == Rank.Jack || firstCard.Rank == Rank.Queen || firstCard.Rank == Rank.King)))
-            {
-                return true;
-            }
+            return true;
         }
-        return false;
     }
-
-    //Returns a string representation of the player's hand.
-    public string HandToString()
-    {
-        var handString = "";
-
-        foreach (var card in hand)
-        {
-            handString += card + " ";
-        }
-
-        return handString.Trim();
-    }
-
-    public void getPlayer()
-	{
-
-	}
-
-	public void setPlayer()
-	{
-
-	}    
+    return false;
 }
+
+//Returns a string representation of the player's hand.
+public string HandToString()
+{
+    var handString = "";
+
+    foreach (var card in hand)
+    {
+        handString += card + " ";
+    }
+
+    return handString.Trim();
+}
+
+public void getPlayer()
+{
+
+}
+
+public void setPlayer()
+{
+
+}    
+}*/

@@ -1,6 +1,5 @@
-﻿using BlackJack;
-using System;
-using System.Collections.Generic;
+﻿namespace BlackJack;
+
 
 public class Hand
 {
@@ -12,29 +11,35 @@ public class Hand
     public Hand()
     {
         cardArr = new List<Card>();
+        //houdt bij welke kaart de volgende is om uitgedeeld te worden
         nextToDeal = 0;
+
+        //houdt het aantal kaarten in de hand bij
         numCards = 0;
     }
 
+    //toont alle kaarten in hand
     public void display()
     {
-        Console.WriteLine("Cards in hand:");
+        Console.WriteLine("Kaarten in hand:");
         foreach (Card card in cardArr)
         {
             Console.WriteLine(card.ToString());
         }
     }
 
+    //telt punten op van de kaarten in je hand en returnt de totale waarde als int
     public int getPoints()
     {
         int points = 0;
         foreach (Card card in cardArr)
         {
-            points += card.getPoints();
+            points += this.getPoints();
         }
         return points;
     }
 
+    //geeft een list van nieuwe kaarten terug, als er nog kaarten zijn om uit te delen
     public List<Card> hit()
     {
         List<Card> newCards = new List<Card>();
@@ -46,10 +51,3 @@ public class Hand
         return newCards;
     }
 }
-
-/*De Hand klasse heeft twee private velden: cardArr, een lijst van Card objecten, en nextToDeal, een integer die bijhoudt welke kaart de volgende is om uitgedeeld te worden.
-Er is ook één publieke eigenschap, numCards, een integer die het aantal kaarten in de hand bijhoudt. Deze heeft een getter en setter.
-De constructor van Hand initialiseert cardArr, nextToDeal en numCards.
-De display methode toont alle kaarten in de hand in de console.
-De getPoints methode telt de punten van elke kaart in de hand op en retourneert de totale waarde als integer.
-De hit methode geeft een lijst van nieuwe kaarten terug, als er nog kaarten beschikbaar zijn om uit te delen.*/

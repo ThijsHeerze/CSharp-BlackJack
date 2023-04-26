@@ -1,9 +1,6 @@
-﻿using System;
-using static System.Formats.Asn1.AsnWriter;
-using System.Reflection.Emit;
-using BlackJack;
+﻿namespace BlackJack;
 
-public class Dealer 
+public class Dealer
 {
     private Card[] cardArr;
     private int nextToDeal;
@@ -12,15 +9,14 @@ public class Dealer
         this.cardArr = cardArr;
         this.nextToDeal = 0;
 
-        Shuffle shuffle = new Shuffle();
-        Shuffle.Shuffle();
-        Deal deal = new Deal();
-        Deal.ShuffleFunctie();
+        //Shuffle.Shuffle(cardArr); // roep de Shuffle methode aan op de klasse Shuffle en geef het cardArr door
     }
 
     public void NewGame()
-	{
-       
+    {
+        //begin een nieuw spel
+        //Shuffle.Shuffle(cardArr); // schud de kaarten opnieuw
+        nextToDeal = 0; // reset de index van de kaart die wordt gedeeld
     }
 }
 
