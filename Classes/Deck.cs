@@ -2,71 +2,40 @@
 
 public class Deck
 {
-    public List<Card> cards;
+    private List<Card> cards = new List<Card>();
+
 
     public Deck()
     {
-        cards = new List<Card>();
+        //array voor suits
+        string[] suits = { "Clubs", "Diamonds", "Hearts", "Spades" };
+        //array voor faceValues
+        string[] faceValues = { "Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
 
-        cards.Add(new Card("harten", "2", 2));
-        cards.Add(new Card("harten", "3", 3));
-        cards.Add(new Card("harten", "4", 4));
-        cards.Add(new Card("harten", "5", 5));
-        cards.Add(new Card("harten", "6", 6));
-        cards.Add(new Card("harten", "7", 7));
-        cards.Add(new Card("harten", "8", 8));
-        cards.Add(new Card("harten", "9", 9));
-        cards.Add(new Card("harten", "10", 10));
-        cards.Add(new Card("harten", "boer", 10));
-        cards.Add(new Card("harten", "vrouw", 10));
-        cards.Add(new Card("harten", "heer", 10));
-        cards.Add(new Card("harten", "aas", 11));
-
-        cards.Add(new Card("ruiten", "2", 2));
-        cards.Add(new Card("ruiten", "3", 3));
-        cards.Add(new Card("ruiten", "4", 4));
-        cards.Add(new Card("ruiten", "5", 5));
-        cards.Add(new Card("ruiten", "6", 6));
-        cards.Add(new Card("ruiten", "7", 7));
-        cards.Add(new Card("ruiten", "8", 8));
-        cards.Add(new Card("ruiten", "9", 9));
-        cards.Add(new Card("ruiten", "10", 10));
-        cards.Add(new Card("ruiten", "boer", 10));
-        cards.Add(new Card("ruiten", "vrouw", 10));
-        cards.Add(new Card("ruiten", "heer", 10));
-        cards.Add(new Card("ruiten", "aas", 11));
-
-        cards.Add(new Card("schoppen", "2", 2));
-        cards.Add(new Card("schoppen", "3", 3));
-        cards.Add(new Card("schoppen", "4", 4));
-        cards.Add(new Card("schoppen", "5", 5));
-        cards.Add(new Card("schoppen", "6", 6));
-        cards.Add(new Card("schoppen", "7", 7));
-        cards.Add(new Card("schoppen", "8", 8));
-        cards.Add(new Card("schoppen", "9", 9));
-        cards.Add(new Card("schoppen", "10", 10));
-        cards.Add(new Card("schoppen", "boer", 10));
-        cards.Add(new Card("schoppen", "vrouw", 10));
-        cards.Add(new Card("schoppen", "heer", 10));
-        cards.Add(new Card("schoppen", "aas", 11));
-
-        cards.Add(new Card("klaver", "2", 2));
-        cards.Add(new Card("klaver", "3", 3));
-        cards.Add(new Card("klaver", "4", 4));
-        cards.Add(new Card("klaver", "5", 5));
-        cards.Add(new Card("klaver", "6", 6));
-        cards.Add(new Card("klaver", "7", 7));
-        cards.Add(new Card("klaver", "8", 8));
-        cards.Add(new Card("klaver", "9", 9));
-        cards.Add(new Card("klaver", "10", 10));
-        cards.Add(new Card("klaver", "boer", 10));
-        cards.Add(new Card("klaver", "vrouw", 10));
-        cards.Add(new Card("klaver", "heer", 10));
-        cards.Add(new Card("klaver", "aas", 11));
+        foreach (string suit in suits)
+        {
+            for (int i = 0; i < faceValues.Length; i++)
+            {
+                int value = i + 1;
+                if (i >= 9)
+                {
+                    value = 10;
+                }
+                if (i == 0)
+                {
+                    value = 11;
+                }
+                Card card = new Card(suit, faceValues[i], value);
+                cards.Add(card);
+            }
+        }
     }
+
+    //functie om de kaarten te kunnen schudden
     public void Shuffle()
     {
         Random random = new Random();
+
         for (int i = cards.Count - 1; i > 0; i--)
         {
             int j = random.Next(i + 1);
@@ -75,6 +44,8 @@ public class Deck
             cards[j] = temp;
         }
     }
+
+    //functie om kaarten te delen
     public Card Deal()
     {
         Card card = cards[0];
@@ -82,15 +53,3 @@ public class Deck
         return card;
     }
 }
-
-/*public Card Deal()
-{
-    if (nextToDeal >= cardArr.Length)
-    {
-        return null; // out of cards
-    }
-
-    Card card = cardArr[nextToDeal];
-    nextToDeal++;
-    return card;
-}*/
